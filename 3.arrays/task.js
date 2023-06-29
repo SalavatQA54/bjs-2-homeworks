@@ -1,14 +1,14 @@
 function compareArrays(arr1, arr2) {
-  let result;
-  result = (arr1.length === arr2.length && arr1.every((item, idx) => item === arr2[idx]));
-
-  return result; // boolean
+    return arr1.length == arr2.length && arr1.every((b,i)=>b === arr2[i])
 }
 
-
-function advancedFilter(arr) {
-  let resultArr;
-  resultArr = arr.filter((num) => num > 0).filter((num) => num % 3 === 0).map((num) => num * 10);
-
-  return resultArr; // array
+function getUsersNamesInAgeRange(users, gender) {
+    let result = users.filter(genus => genus.gender === gender).map(years => years.age).reduce((acc, item, index, users) => {
+        acc += item;
+        if(index === users.length -1) {
+            return acc / users.length;
+        }
+        return acc;
+    }, 0)
+    return result;
 }
